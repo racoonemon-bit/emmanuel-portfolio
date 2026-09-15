@@ -1,92 +1,149 @@
-<section id="contact" class="w-full py-12 border-t border-[#ffffff10]">
+---
+---
+
+<section id="contact" class="w-full py-16 border-t border-[#ffffff10] text-[var(--white)] scroll-mt-24">
   <div class="max-w-5xl mx-auto">
-    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Let's talk</h2>
-    <h3 class="text-4xl md:text-5xl font-medium text-[var(--white)] mb-6">
-      Contact
-    </h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="text-[var(--white-icon)]">
-        <p class="mb-4">
-          Have a question or a project in mind? Feel free to reach out.
-        </p>
-        <div class="flex items-center gap-2">
-          <span>Location:</span>
-          <span class="text-[var(--white)]">Your country</span>
+    <!-- Header -->
+    <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-[var(--sec)]"></span>
+          <h2 class="text-xs font-mono uppercase tracking-widest text-[var(--sec)] shiny-sec">
+            Direct Communication
+          </h2>
+        </div>
+        <h3 class="text-3xl md:text-5xl font-medium tracking-tight">
+          Let's Talk
+        </h3>
+      </div>
+      <p class="text-sm md:text-base text-[var(--white-icon)] max-w-md">
+        Available for full-time remote roles, campaign sprints, monthly podcast retainers, and creative workflow advisory engagements.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- Contact Info Cards Column -->
+      <div class="lg:col-span-5 space-y-4">
+        <!-- Email Card -->
+        <a
+          href="mailto:emmanuelumaru945@gmail.com"
+          class="block p-5 rounded-2xl border border-white/10 bg-[#14141470] backdrop-blur-md hover:border-[var(--sec)]/50 hover:bg-[#161616] transition-all duration-300 group"
+        >
+          <div class="flex items-center gap-3.5 mb-2">
+            <div class="size-10 rounded-xl bg-[var(--sec)]/10 border border-[var(--sec)]/20 flex items-center justify-center text-[var(--sec)]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs font-mono uppercase tracking-wider text-[var(--white-icon)] block">
+                Direct Email
+              </span>
+              <span class="text-sm md:text-base font-semibold text-white group-hover:text-[var(--sec)] transition-colors">
+                emmanuelumaru945@gmail.com
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Phone / WhatsApp Card -->
+        <a
+          href="tel:+23488033109348"
+          class="block p-5 rounded-2xl border border-white/10 bg-[#14141470] backdrop-blur-md hover:border-[var(--sec)]/50 hover:bg-[#161616] transition-all duration-300 group"
+        >
+          <div class="flex items-center gap-3.5 mb-2">
+            <div class="size-10 rounded-xl bg-[var(--sec)]/10 border border-[var(--sec)]/20 flex items-center justify-center text-[var(--sec)]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs font-mono uppercase tracking-wider text-[var(--white-icon)] block">
+                Phone / WhatsApp
+              </span>
+              <span class="text-sm md:text-base font-semibold text-white group-hover:text-[var(--sec)] transition-colors">
+                +23488033109348
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Location & Availability Card -->
+        <div class="p-5 rounded-2xl border border-white/10 bg-[#14141450] backdrop-blur-md">
+          <span class="text-xs font-mono uppercase tracking-wider text-[var(--sec)] block mb-1">
+            Availability & Timezone
+          </span>
+          <div class="space-y-1.5 text-xs md:text-sm text-[var(--white-icon)]">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span class="text-white font-medium">UTC+1 (West Africa Time)</span>
+            </div>
+            <p class="leading-relaxed">
+              Seamless daily overlap with EMEA business hours and Americas morning windows. Async-first collaboration with structured sprint updates.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div>
+      <!-- Quick Message Form Column -->
+      <div class="lg:col-span-7 rounded-2xl border border-white/10 bg-[#14141470] backdrop-blur-md p-6 md:p-8">
+        <h4 class="text-lg font-semibold text-white mb-2">Send a Message</h4>
+        <p class="text-xs md:text-sm text-[var(--white-icon)] mb-6">
+          Reach out directly regarding full-time roles, creative sprints, or pipeline consulting.
+        </p>
+
         <form
           id="contact-form"
-          action="https://formspree.io/f/YOUR_FORM_ID_HERE"
+          action="mailto:emmanuelumaru945@gmail.com"
           method="POST"
+          enctype="text/plain"
           class="flex flex-col gap-4"
         >
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              class="px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+              class="px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm"
+            />
+          </div>
+
           <input
             type="text"
-            name="from_name"
-            placeholder="Name"
+            name="subject"
+            placeholder="Project or Inquiry Subject"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
+            class="px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm"
           />
-          <input
-            type="email"
-            name="reply_to"
-            placeholder="Email"
-            required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
-          />
+
           <textarea
             name="message"
-            placeholder="Message"
-            rows="6"
+            placeholder="Tell me about your project, timeline, or objectives..."
+            rows="5"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none"
+            class="px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm resize-none"
           ></textarea>
+
           <button
             type="submit"
-            class="px-4 py-2 bg-[var(--white-icon-tr)] text-[var(--white)] rounded-lg opacity-60 transition-opacity border border-[var(--white-icon-tr)] hover:opacity-100 hover:bg-[var(--white-icon-tr)]"
+            class="px-6 py-3.5 bg-[var(--sec)] text-black font-semibold rounded-xl text-sm hover:brightness-110 transition-all shadow-[0_0_20px_rgba(164,118,255,0.2)] flex items-center justify-center gap-2 self-start"
           >
-            Submit
+            <span>Send Inquiry</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+              <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+            </svg>
           </button>
         </form>
-        <div
-          id="form-message"
-          class="hidden justify-center items-center mt-4 text-[var(--white)] text-lg"
-        >
-          ✅ Thank you for your message!
-        </div>
       </div>
     </div>
   </div>
 </section>
-
-<script type="module" is:inline>
-  const form = document.getElementById("contact-form");
-  const formMessage = document.getElementById("form-message");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
-      if (response.ok) {
-        form.reset();
-        form.style.display = "none";
-        formMessage.classList.remove("hidden");
-      } else {
-        const data = await response.json();
-        console.error("Error response:", data);
-        alert("There was a problem sending your message.");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("There was a problem sending your message.");
-    }
-  });
-</script>

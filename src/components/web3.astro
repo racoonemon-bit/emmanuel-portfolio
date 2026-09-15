@@ -1,0 +1,440 @@
+---
+interface Web3Video {
+  id: string;
+  title: string;
+  category: string;
+  tag: string;
+  duration: string;
+  aspectRatio: "16/9" | "9/16";
+  videoSrc: string;
+  posterSrc: string;
+  description: string;
+  details: string[];
+  featured?: boolean;
+}
+
+const web3Videos: Web3Video[] = [
+  {
+    id: "staccana-cinematic",
+    title: "Staccana: 3D Metaworld Narrative",
+    category: "Staccana & STACVERSE",
+    tag: "3D Cinematic Master",
+    duration: "3:00",
+    aspectRatio: "16/9",
+    videoSrc: "/videos/web3/staccana-web3-cinematic-story.mp4",
+    posterSrc: "/images/web3/staccana-web3-cinematic-story-poster.jpg",
+    description: "A 3-minute 3D animated cinematic following the Staccana mascot on a narrative odyssey through futuristic cyber skylines, cosmic realms, and decentralized digital communities.",
+    details: ["1280x720 HD", "Full Stereo Score", "Character Worldbuilding"],
+    featured: true,
+  },
+  {
+    id: "stacverse-trailer",
+    title: "STACVERSE: Ecosystem Reveal Trailer",
+    category: "Staccana & STACVERSE",
+    tag: "Ecosystem Trailer",
+    duration: "0:10",
+    aspectRatio: "16/9",
+    videoSrc: "/videos/web3/stacverse-ecosystem-trailer.mp4",
+    posterSrc: "/images/web3/stacverse-ecosystem-trailer-poster.jpg",
+    description: "High-energy brand reveal featuring dynamic cybernetic circuitry, glowing blockchain node cubes, and dimensional STACVERSE ecosystem branding.",
+    details: ["1280x720 HD", "Node Circuit FX", "Brand Identity Motion"],
+  },
+  {
+    id: "aw3d-blockchain",
+    title: "AREWA WEB3 DAO: Blockchain Foundations",
+    category: "AREWA WEB3 DAO",
+    tag: "Educational Motion Graphic",
+    duration: "0:30",
+    aspectRatio: "16/9",
+    videoSrc: "/videos/web3/arewa-web3-blockchain-foundation.mp4",
+    posterSrc: "/images/web3/arewa-web3-blockchain-foundation-poster.jpg",
+    description: "‘The Foundation: Why We Need Blockchain’ — educational motion campaign exploring decentralized networks, financial sovereignty, and African technological empowerment.",
+    details: ["1280x720 HD", "Voiceover & Audio", "Community Storytelling"],
+  },
+  {
+    id: "aw3d-journey",
+    title: "AREWA WEB3 DAO: Start Your Journey",
+    category: "AREWA WEB3 DAO",
+    tag: "Vertical Mobile Motion",
+    duration: "0:08",
+    aspectRatio: "9/16",
+    videoSrc: "/videos/web3/arewa-web3-start-your-journey-9x16.mp4",
+    posterSrc: "/images/web3/arewa-web3-start-your-journey-9x16-poster.jpg",
+    description: "High-impact vertical motion creative engineered for mobile feeds: ‘Start Your Web3 Journey — AW3D provides the cultural bridge to the global economy.’",
+    details: ["720x1280 (9:16)", "Mobile Optimized", "Community Call to Action"],
+  },
+];
+
+const featuredVideo = web3Videos.find((v) => v.featured);
+const companionVideos = web3Videos.filter((v) => !v.featured);
+---
+
+<section
+  id="web3"
+  class="py-16 border-t border-[#ffffff10] text-[var(--white)] scroll-mt-24"
+>
+  <div class="max-w-5xl mx-auto">
+    <!-- Header -->
+    <div class="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-[#A476FF] animate-pulse"></span>
+          <h2 class="text-sm font-semibold tracking-widest uppercase text-[var(--sec)] shiny-sec">
+            Decentralized Media & 3D Motion
+          </h2>
+        </div>
+        <h3 class="text-3xl md:text-5xl font-medium tracking-tight">
+          Web3 Creative & Content
+        </h3>
+      </div>
+      <p class="text-sm md:text-base text-[var(--white-icon)] max-w-md">
+        Verified motion deliverables spanning 3D character narratives, ecosystem launch trailers, and community-driven Web3 educational campaigns.
+      </p>
+    </div>
+
+    <!-- Category Filter Pills -->
+    <div class="flex flex-wrap gap-2 mb-10" id="web3-filter-tabs">
+      <button
+        type="button"
+        data-filter="all"
+        class="web3-filter-btn active px-4 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 border border-white/10 bg-white/10 text-white"
+      >
+        All Works ({web3Videos.length})
+      </button>
+      <button
+        type="button"
+        data-filter="Staccana & STACVERSE"
+        class="web3-filter-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 border border-white/5 bg-[#141414] text-[var(--white-icon)] hover:text-white hover:border-white/20"
+      >
+        Staccana & STACVERSE ({web3Videos.filter((v) => v.category === "Staccana & STACVERSE").length})
+      </button>
+      <button
+        type="button"
+        data-filter="AREWA WEB3 DAO"
+        class="web3-filter-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 border border-white/5 bg-[#141414] text-[var(--white-icon)] hover:text-white hover:border-white/20"
+      >
+        AREWA WEB3 DAO ({web3Videos.filter((v) => v.category === "AREWA WEB3 DAO").length})
+      </button>
+    </div>
+
+    <!-- Featured Master Reel (Prominent) -->
+    {featuredVideo && (
+      <div
+        class="web3-card mb-12 rounded-3xl overflow-hidden border border-white/10 bg-[#14141460] backdrop-blur-md transition-all duration-500 hover:border-[#a476ff40] hover:shadow-[0_0_30px_rgba(164,118,255,0.15)]"
+        data-category={featuredVideo.category}
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+          <!-- Video Player Column -->
+          <div class="lg:col-span-7 relative group bg-black flex items-center justify-center">
+            <video
+              id={featuredVideo.id}
+              class="w-full aspect-video object-cover"
+              poster={featuredVideo.posterSrc}
+              preload="metadata"
+              playsinline
+            >
+              <source src={featuredVideo.videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <!-- Custom Video Overlay -->
+            <button
+              type="button"
+              class="video-play-btn absolute inset-0 w-full h-full flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors group cursor-pointer"
+              aria-label={`Play ${featuredVideo.title}`}
+              data-video-id={featuredVideo.id}
+            >
+              <div class="size-16 md:size-20 rounded-full bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-[#a476ff]/80">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-8 md:size-10 translate-x-0.5 play-icon"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-8 md:size-10 pause-icon hidden"
+                >
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                </svg>
+              </div>
+            </button>
+
+            <!-- Bottom Video Quick Controls -->
+            <div class="absolute bottom-3 right-3 flex items-center gap-2 z-10">
+              <button
+                type="button"
+                class="video-mute-btn p-2 rounded-lg bg-black/60 backdrop-blur-md text-white/80 hover:text-white border border-white/10 transition-all text-xs flex items-center gap-1.5"
+                data-video-id={featuredVideo.id}
+                aria-label="Toggle Sound"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 sound-on-icon hidden">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 sound-off-icon">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+                <span class="text-[10px] uppercase font-mono">Audio</span>
+              </button>
+              <span class="px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[var(--white)] border border-white/10 text-xs font-mono">
+                {featuredVideo.duration}
+              </span>
+            </div>
+          </div>
+
+          <!-- Info Column -->
+          <div class="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-[#a476ff25] text-[#caa8ff] border border-[#a476ff40]">
+                  {featuredVideo.tag}
+                </span>
+                <span class="text-xs text-[var(--white-icon)] font-mono">
+                  {featuredVideo.category}
+                </span>
+              </div>
+
+              <h4 class="text-2xl md:text-3xl font-semibold mb-4 leading-snug">
+                {featuredVideo.title}
+              </h4>
+
+              <p class="text-sm md:text-base text-[var(--white-icon)] mb-6 leading-relaxed">
+                {featuredVideo.description}
+              </p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                {featuredVideo.details.map((spec) => (
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-white/5 border border-white/5 text-[var(--white-icon)]">
+                    {spec}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- Secondary Showcase Grid (Ecosystem, Mascot UI & AW3D Campaigns) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="web3-grid">
+      {companionVideos.map((video) => (
+        <div
+          class={`web3-card group rounded-2xl overflow-hidden border border-white/10 bg-[#14141470] backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-[#161616] flex flex-col ${
+            video.aspectRatio === "9/16" ? "row-span-1" : ""
+          }`}
+          data-category={video.category}
+        >
+          <!-- Video Container -->
+          <div class="relative bg-black overflow-hidden">
+            <video
+              id={video.id}
+              class={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.02] ${
+                video.aspectRatio === "9/16" ? "h-72 md:h-80" : "aspect-video"
+              }`}
+              poster={video.posterSrc}
+              preload="metadata"
+              playsinline
+            >
+              <source src={video.videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <!-- Video Overlay Play Button -->
+            <button
+              type="button"
+              class="video-play-btn absolute inset-0 w-full h-full flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors group cursor-pointer"
+              aria-label={`Play ${video.title}`}
+              data-video-id={video.id}
+            >
+              <div class="size-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-xl transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#a476ff]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-6 translate-x-0.5 play-icon"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-6 pause-icon hidden"
+                >
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                </svg>
+              </div>
+            </button>
+
+            <!-- Bottom Controls / Badges -->
+            <div class="absolute bottom-2.5 right-2.5 flex items-center gap-1.5 z-10">
+              <button
+                type="button"
+                class="video-mute-btn p-1.5 rounded-md bg-black/60 backdrop-blur-md text-white/80 hover:text-white border border-white/10 transition-all text-xs"
+                data-video-id={video.id}
+                aria-label="Toggle Sound"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3.5 sound-on-icon hidden">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3.5 sound-off-icon">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+              </button>
+              <span class="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-md text-[var(--white)] border border-white/10 text-[11px] font-mono">
+                {video.duration}
+              </span>
+            </div>
+
+            <!-- Top Left Tag Badge -->
+            <div class="absolute top-2.5 left-2.5 z-10">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-medium bg-black/70 backdrop-blur-md text-[#dfdfdf] border border-white/10">
+                {video.tag}
+              </span>
+            </div>
+          </div>
+
+          <!-- Video Text Content -->
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] text-[var(--sec)] font-mono tracking-wider uppercase block mb-1">
+                {video.category}
+              </span>
+              <h4 class="text-lg font-semibold text-white mb-2 leading-snug">
+                {video.title}
+              </h4>
+              <p class="text-xs md:text-sm text-[var(--white-icon)] line-clamp-3 mb-4 leading-relaxed">
+                {video.description}
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+              {video.details.map((item) => (
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 text-[var(--white-icon)]">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Video playback coordination: click to play/pause with icon toggle
+  document.addEventListener("DOMContentLoaded", () => {
+    const playButtons = document.querySelectorAll<HTMLButtonElement>(".video-play-btn");
+    const muteButtons = document.querySelectorAll<HTMLButtonElement>(".video-mute-btn");
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>(".web3-filter-btn");
+    const videoCards = document.querySelectorAll<HTMLElement>(".web3-card");
+
+    // Handle Play / Pause
+    playButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const videoId = btn.getAttribute("data-video-id");
+        if (!videoId) return;
+
+        const video = document.getElementById(videoId) as HTMLVideoElement | null;
+        if (!video) return;
+
+        const playIcon = btn.querySelector(".play-icon");
+        const pauseIcon = btn.querySelector(".pause-icon");
+
+        if (video.paused) {
+          // Pause all other playing videos to avoid chaotic multi-audio
+          document.querySelectorAll<HTMLVideoElement>("video").forEach((v) => {
+            if (v !== video && !v.paused) {
+              v.pause();
+              const otherBtn = document.querySelector(`.video-play-btn[data-video-id="${v.id}"]`);
+              if (otherBtn) {
+                otherBtn.querySelector(".play-icon")?.classList.remove("hidden");
+                otherBtn.querySelector(".pause-icon")?.classList.add("hidden");
+              }
+            }
+          });
+
+          video.play().then(() => {
+            playIcon?.classList.add("hidden");
+            pauseIcon?.classList.remove("hidden");
+          }).catch(() => {
+            // Browser autoplay restrictions
+          });
+        } else {
+          video.pause();
+          playIcon?.classList.remove("hidden");
+          pauseIcon?.classList.add("hidden");
+        }
+      });
+    });
+
+    // Handle Mute / Unmute
+    muteButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const videoId = btn.getAttribute("data-video-id");
+        if (!videoId) return;
+
+        const video = document.getElementById(videoId) as HTMLVideoElement | null;
+        if (!video) return;
+
+        video.muted = !video.muted;
+        const soundOnIcon = btn.querySelector(".sound-on-icon");
+        const soundOffIcon = btn.querySelector(".sound-off-icon");
+
+        if (video.muted) {
+          soundOnIcon?.classList.add("hidden");
+          soundOffIcon?.classList.remove("hidden");
+        } else {
+          soundOnIcon?.classList.remove("hidden");
+          soundOffIcon?.classList.add("hidden");
+        }
+      });
+    });
+
+    // Auto update icon when video ends
+    document.querySelectorAll<HTMLVideoElement>("video").forEach((video) => {
+      video.addEventListener("ended", () => {
+        const btn = document.querySelector(`.video-play-btn[data-video-id="${video.id}"]`);
+        if (btn) {
+          btn.querySelector(".play-icon")?.classList.remove("hidden");
+          btn.querySelector(".pause-icon")?.classList.add("hidden");
+        }
+      });
+    });
+
+    // Filter Buttons
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+        if (!filter) return;
+
+        filterButtons.forEach((b) => {
+          b.classList.remove("active", "bg-white/10", "text-white");
+          b.classList.add("bg-[#141414]", "text-[var(--white-icon)]");
+        });
+        btn.classList.add("active", "bg-white/10", "text-white");
+        btn.classList.remove("bg-[#141414]", "text-[var(--white-icon)]");
+
+        videoCards.forEach((card) => {
+          const category = card.getAttribute("data-category");
+          if (filter === "all" || category === filter) {
+            card.style.display = "";
+            card.style.opacity = "1";
+          } else {
+            card.style.display = "none";
+            card.style.opacity = "0";
+          }
+        });
+      });
+    });
+  });
+</script>

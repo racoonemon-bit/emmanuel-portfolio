@@ -1,0 +1,171 @@
+---
+interface ServiceItem {
+  number: string;
+  title: string;
+  category: string;
+  description: string;
+  deliverables: string[];
+}
+
+const services: ServiceItem[] = [
+  {
+    number: "01",
+    title: "Generative Visual Production & Staging",
+    category: "Commercial Imagery",
+    description: "High-fidelity commercial key visuals, multi-angle product staging, and contextual scenes engineered with disciplined prompt pipelines and strict product fidelity control.",
+    deliverables: ["4K High-Res Visual Plates", "Product Fidelity Masking", "Multi-Angle Staging", "Campaign Art Direction"],
+  },
+  {
+    number: "02",
+    title: "Episodic Video & Podcast Repurposing",
+    category: "Motion & Audio",
+    description: "Transforming talking-head clips into high-retention narrative arcs featuring motivated camera punch-ins (1.04x–1.28x), J-cut audio continuity, and verbatim color-sampled kinetic subtitles.",
+    deliverables: ["16:9 Landscape Masters", "9:16 Vertical Shorts/Reels", "Acoustic Mastering (-15dB Ducking)", "Zero-Template Subtitles"],
+  },
+  {
+    number: "03",
+    title: "Creative Workflow Design & Automation",
+    category: "Systems & Ops",
+    description: "Designing modular, repeatable prompt-to-production pipelines that eliminate creative bottlenecks, accelerate asset turnaround times, and automate quality verification.",
+    deliverables: ["Prompt Pipeline Architectures", "Automated QA Verification Scripts", "Multi-Variant Testing Setups", "Execution Playbooks & SOPs"],
+  },
+  {
+    number: "04",
+    title: "AI Avatars & Synthetic Spokespersons",
+    category: "Synthetic Media",
+    description: "Photorealistic brand-aligned digital avatars and synthetic video presenters integrated with neural voice synthesis and custom virtual broadcast studio aesthetics.",
+    deliverables: ["Custom Digital Avatars", "Neural Voice & Lip-Sync", "Virtual Studio Sets", "Corporate Explainers"],
+  },
+  {
+    number: "05",
+    title: "Performance Ad Creative & Strategy",
+    category: "Paid Social",
+    description: "High-volume performance static and video creative engineered around 3-second psychological visual hooks, rapid variant matrices, and proven retention curves.",
+    deliverables: ["Hook & Angle Engineering", "Variant Testing Matrices", "Launch Playbooks & Ad Copy", "24–48h Rapid Iterations"],
+  },
+];
+
+const tiers = [
+  {
+    name: "Campaign Sprint",
+    timeline: "1–2 Weeks",
+    suited: "Product launches, ad creative refreshes, seasonal pushes",
+    output: "10–20 high-fidelity visual assets, 5–10 ad copy variants, launch playbook",
+  },
+  {
+    name: "Podcast / Video Retainer",
+    timeline: "Monthly",
+    suited: "Content creators, founders, corporate media channels",
+    output: "Full-length edited episodes, 12–20 short-form clips, automated typography, master audio",
+  },
+  {
+    name: "Workflow Architecture",
+    timeline: "2–3 Weeks",
+    suited: "Creative teams automating production pipelines",
+    output: "Custom prompt system, verification scripts, standard operating procedures",
+  },
+  {
+    name: "Embedded Specialist",
+    timeline: "Full-Time / Retainer",
+    suited: "High-growth startups & creative agencies",
+    output: "Full-stack AI creative production, daily pipeline execution, strategic ad testing",
+  },
+];
+---
+
+<section id="services" class="py-16 border-t border-[#ffffff10] text-[var(--white)] scroll-mt-24">
+  <div class="max-w-5xl mx-auto">
+    <!-- Header -->
+    <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-[var(--sec)]"></span>
+          <h2 class="text-xs font-mono uppercase tracking-widest text-[var(--sec)] shiny-sec">
+            Professional Offerings
+          </h2>
+        </div>
+        <h3 class="text-3xl md:text-5xl font-medium tracking-tight">
+          Services
+        </h3>
+      </div>
+      <p class="text-sm md:text-base text-[var(--white-icon)] max-w-md">
+        Full-cycle creative technology services engineered for brands, agencies, and digital media teams looking to scale visual output without sacrificing taste.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      {services.map((service) => (
+        <div class="group rounded-2xl border border-white/10 bg-[#14141470] backdrop-blur-md p-6 flex flex-col justify-between hover:border-[var(--sec)]/50 hover:bg-[#161616] transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-[var(--sec)] border border-white/5">
+                {service.number}
+              </span>
+              <span class="text-[11px] font-mono text-[var(--white-icon)] uppercase tracking-wider">
+                {service.category}
+              </span>
+            </div>
+
+            <h4 class="text-lg md:text-xl font-semibold text-white mb-3 leading-snug group-hover:text-[var(--sec)] transition-colors">
+              {service.title}
+            </h4>
+
+            <p class="text-xs md:text-sm text-[var(--white-icon)] mb-6 leading-relaxed">
+              {service.description}
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/5">
+            <span class="text-[10px] uppercase font-mono tracking-wider text-[var(--white-icon)] block mb-2">
+              Deliverables
+            </span>
+            <ul class="space-y-1">
+              {service.deliverables.map((item) => (
+                <li class="text-xs text-[var(--white-icon)] flex items-center gap-1.5">
+                  <span class="text-[var(--sec)] text-xs">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Engagement Frameworks -->
+    <div class="rounded-3xl border border-white/10 bg-[#14141450] backdrop-blur-md p-6 md:p-8">
+      <div class="mb-6">
+        <span class="text-xs font-mono uppercase tracking-widest text-[var(--sec)] block mb-1">
+          Collaboration Models
+        </span>
+        <h4 class="text-xl md:text-2xl font-semibold text-white">
+          Engagement Frameworks
+        </h4>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {tiers.map((tier) => (
+          <div class="p-4 rounded-xl border border-white/5 bg-white/[0.02] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <h5 class="font-semibold text-white text-sm md:text-base">
+                  {tier.name}
+                </h5>
+              </div>
+              <span class="inline-block text-[11px] font-mono text-[var(--sec)] px-2 py-0.5 rounded bg-[var(--sec)]/10 border border-[var(--sec)]/20 mb-3">
+                {tier.timeline}
+              </span>
+              <p class="text-xs text-[var(--white-icon)] mb-3 leading-relaxed">
+                <span class="text-white/60 font-medium">Best for:</span> {tier.suited}
+              </p>
+            </div>
+            <div class="pt-2 border-t border-white/5 text-[11px] text-[var(--white-icon)]">
+              {tier.output}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

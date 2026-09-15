@@ -1,0 +1,183 @@
+---
+interface ExperienceItem {
+  period: string;
+  role: string;
+  company: string;
+  location: string;
+  type: string;
+  contributions: string[];
+}
+
+const primaryExperience: ExperienceItem[] = [
+  {
+    period: "March 2022 — August 2026",
+    role: "AI Solutions & Creative Technology Specialist",
+    company: "Hublud Technology",
+    location: "Remote",
+    type: "Full-Time / Contract",
+    contributions: [
+      "Designed and deployed practical end-to-end AI-powered workflows for marketing teams, visual designers, and digital project managers.",
+      "Developed marketing strategies and AI-assisted campaigns supporting multiple digital product rollouts and brand promotions.",
+      "Produced high-fidelity AI-generated product launch visuals, social media creatives, and promotional static assets.",
+      "Engineered AI avatars and synthetic media presenters for digital corporate communications and multi-platform marketing.",
+      "Streamlined creative turnaround cycles by integrating prompt engineering techniques and automated asset pipelines into production workflows.",
+    ],
+  },
+  {
+    period: "September 2022 — Present",
+    role: "Independent AI & Creative Technology Specialist",
+    company: "Independent Contractor",
+    location: "Remote Worldwide",
+    type: "Contract / Advisory",
+    contributions: [
+      "Delivering bespoke generative AI production, prompt design, and creative workflow automation for international clients and digital agencies.",
+      "Engineered complete podcast visual packages, episodic social snippet assets, and promotional media.",
+      "Generated bespoke product launch visuals, packaging concepts, and commercial promotional assets.",
+      "Built AI-generated avatars, synthesized video presenters, and scripted automated video assets for digital campaigns.",
+    ],
+  },
+  {
+    period: "October 2016 — January 2020",
+    role: "Creative Director",
+    company: "Jameson's Foundation",
+    location: "Kaduna, Nigeria",
+    type: "On-Site / Full-Time",
+    contributions: [
+      "Led creative vision across organizational initiatives, advocacy campaigns, and stakeholder communication collateral.",
+      "Conceived and executed visual identities and messaging strategies across print, digital, and promotional media.",
+      "Directed creative production teams to ensure strict brand cohesion and aesthetic quality assurance.",
+      "Partnered with project leadership to translate complex organizational objectives into accessible, compelling visual narratives.",
+    ],
+  },
+];
+
+const domainMultipliers = [
+  {
+    domain: "Web3 & Community Storytelling",
+    org: "AREWA WEB3",
+    role: "Web3 Creative & Content Specialist (2022–2026)",
+    summary: "Produced high-engagement internet memes, infographics, short-form motion campaigns, and AI-assisted visuals translating complex decentralized concepts into accessible media.",
+  },
+  {
+    domain: "Sports Analytics & Predictive Modeling",
+    org: "GoWin Software & Independent Analysis",
+    role: "Ambassador & Analyst (2018–Present)",
+    summary: "Conducted fixture statistical modeling across top-flight football leagues, achieving a verified 92% prediction accuracy rate through rigorous data discipline and pattern recognition.",
+  },
+  {
+    domain: "Pedagogy & Global Communication",
+    org: "Preply & Independent Tutoring",
+    role: "Online English Tutor · TESOL Certified (2018–Present)",
+    summary: "Delivered structured English communication instruction to global learners. Certified in TESOL and E-Learning Theory—fostering empathetic cross-cultural clarity that enhances prompt engineering precision.",
+  },
+];
+---
+
+<section id="experience" class="py-16 border-t border-[#ffffff10] text-[var(--white)] scroll-mt-24">
+  <div class="max-w-5xl mx-auto">
+    <!-- Header -->
+    <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-[var(--sec)]"></span>
+          <h2 class="text-xs font-mono uppercase tracking-widest text-[var(--sec)] shiny-sec">
+            Professional Trajectory
+          </h2>
+        </div>
+        <h3 class="text-3xl md:text-5xl font-medium tracking-tight">
+          Experience
+        </h3>
+      </div>
+      <p class="text-sm md:text-base text-[var(--white-icon)] max-w-md">
+        Verified professional history combining creative technology leadership, workflow automation, and multidisciplinary domain depth.
+      </p>
+    </div>
+
+    <!-- Primary Career Track -->
+    <div class="space-y-6 mb-16">
+      {primaryExperience.map((item) => (
+        <div class="rounded-2xl border border-white/10 bg-[#14141470] backdrop-blur-md p-6 md:p-8 hover:border-[var(--sec)]/40 transition-all duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4 pb-4 border-b border-white/5">
+            <div>
+              <span class="text-xs font-mono text-[var(--sec)] uppercase tracking-wider block mb-1">
+                {item.company}
+              </span>
+              <h4 class="text-xl md:text-2xl font-semibold text-white">
+                {item.role}
+              </h4>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-3 py-1 rounded-md text-xs font-mono bg-white/5 border border-white/5 text-[var(--white-icon)]">
+                {item.location}
+              </span>
+              <span class="px-3 py-1 rounded-md text-xs font-mono bg-[var(--sec)]/10 text-[var(--sec)] border border-[var(--sec)]/20">
+                {item.period}
+              </span>
+            </div>
+          </div>
+
+          <ul class="space-y-2">
+            {item.contributions.map((bullet) => (
+              <li class="text-xs md:text-sm text-[var(--white-icon)] flex items-start gap-2.5">
+                <span class="text-[var(--sec)] text-sm mt-0.5">•</span>
+                <span class="leading-relaxed">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Supporting Domain Multipliers -->
+    <div class="rounded-3xl border border-white/10 bg-[#14141450] backdrop-blur-md p-6 md:p-8 mb-12">
+      <div class="mb-6">
+        <span class="text-xs font-mono uppercase tracking-widest text-[var(--sec)] block mb-1">
+          Multidisciplinary Foundations
+        </span>
+        <h4 class="text-xl md:text-2xl font-semibold text-white">
+          Supporting Domain Multipliers
+        </h4>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {domainMultipliers.map((dm) => (
+          <div class="p-5 rounded-2xl border border-white/5 bg-white/[0.02] flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-mono uppercase tracking-wider text-[var(--sec)] block mb-1">
+                {dm.domain}
+              </span>
+              <h5 class="text-sm font-semibold text-white mb-1">
+                {dm.org}
+              </h5>
+              <span class="text-xs text-[var(--white-icon)] font-mono block mb-3">
+                {dm.role}
+              </span>
+              <p class="text-xs text-[var(--white-icon)] leading-relaxed">
+                {dm.summary}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Education & Analytical Foundation -->
+    <div class="rounded-2xl border border-white/10 bg-[#14141460] p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-[var(--sec)] block mb-1">
+          Academic Foundation
+        </span>
+        <h5 class="text-lg font-semibold text-white">
+          Federal University of Technology, Niger, Nigeria
+        </h5>
+        <p class="text-xs md:text-sm text-[var(--white-icon)] mt-1">
+          Bachelor of Technology (B.Tech), Geology • Systematic methodology, empirical testing, and structural observation.
+        </p>
+      </div>
+      <span class="px-3 py-1 rounded-md text-xs font-mono bg-white/5 border border-white/10 text-[var(--white-icon)] self-start md:self-auto whitespace-nowrap">
+        2005 — 2010
+      </span>
+    </div>
+  </div>
+</section>

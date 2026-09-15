@@ -1,132 +1,361 @@
 ---
+const trueWordsProject = {
+  id: "true-words",
+  title: "True Words Podcast: Studio Editorial & Video Repurposing",
+  domain: "Episodic Media Production & AI Video Repurposing",
+  role: "AI Video Producer & Editorial Architect",
+  status: "Completed Production Masters",
+  headline: "Transforming 10 raw studio clips into a high-retention 76-second narrative arc using documentary editorial grammar.",
+  description: "Built an end-to-end video repurposing engine overcoming single-camera static framing through scripted punch-ins (1.04x–1.28x), J-cut dialogue bridges, verbatim color-sampled kinetic typography, and broadcast-grade acoustic engineering.",
+  technicalSpecs: [
+    "Whisper Speech Alignment",
+    "J-Cut Audio Bridges (60–120ms)",
+    "Motivated Punch-Ins (1.04x–1.28x)",
+    "-15dB Dynamic Music Ducking",
+    "+2.2dB Vocal EQ @ 3.2kHz",
+    "Zero-Template Kinetic Subtitles",
+  ],
+  fullMasterVideo: {
+    title: "Full 76s Master Episode (1080p Landscape)",
+    src: "/assets/videos/true-words-youtube-full-episode-1080p.mp4",
+    poster: "/assets/images/true-words-youtube-full-episode-1080p-poster.jpg",
+    duration: "1:16",
+  },
+  shorts: [
+    {
+      title: "Short 01: Episode Hook",
+      tag: "Thesis Statement",
+      src: "/assets/videos/true-words-short-01-episode-hook-9x16.mp4",
+      poster: "/assets/images/true-words-short-01-episode-hook-9x16-poster.jpg",
+      duration: "0:25",
+    },
+    {
+      title: "Short 02: Hero Quote",
+      tag: "Emotional Centerpiece",
+      src: "/assets/videos/true-words-short-02-hero-quote-9x16.mp4",
+      poster: "/assets/images/true-words-short-02-hero-quote-9x16-poster.jpg",
+      duration: "0:16",
+    },
+    {
+      title: "Short 03: Growth Routine",
+      tag: "Philosophical Resolution",
+      src: "/assets/videos/true-words-short-03-growth-routine-9x16.mp4",
+      poster: "/assets/images/true-words-short-03-growth-routine-9x16-poster.jpg",
+      duration: "0:22",
+    },
+  ],
+};
 
-interface Project {
-  title: string;
-  image: string;
-  link: string;
-  preview: string;
-  status: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "Project One",
-    image: "https://placehold.co/600x400/1a1a1a/ffffff?text=Project+One",
-    link: "https://github.com",
-    preview: "https://example.com",
-    status: "Deployed",
-  },
-  {
-    title: "Project Two",
-    image: "https://placehold.co/600x400/1a1a1a/ffffff?text=Project+Two",
-    link: "https://github.com",
-    preview: "https://example.com",
-    status: "On Development",
-  },
-  {
-    title: "Project Three",
-    image: "https://placehold.co/600x400/1a1a1a/ffffff?text=Project+Three",
-    link: "https://github.com",
-    preview: "https://example.com",
-    status: "Contributor",
-  },
-  {
-    title: "Project Four",
-    image: "https://placehold.co/600x400/1a1a1a/ffffff?text=Project+Four",
-    link: "https://github.com",
-    preview: "https://example.com",
-    status: "Deployed",
-  },
-];
+const aiGraphicsProject = {
+  id: "ai-graphics-blueprint",
+  title: "AI Graphics Business Blueprint & Direct-Response System",
+  domain: "Performance Creative Strategy & Generative Visual Systems",
+  role: "Performance Creative Strategist & AI Producer",
+  status: "Production Blueprint & Framework",
+  headline: "Structured operational framework translating consumer psychological friction points into 3-second visual hooks.",
+  description: "Engineered rapid variant testing matrices (5 visual hooks across 3 benefit angles) with multi-modal prompt pipelines, automated typography, and audio normalization to deliver paid social creatives within 24–48 hours.",
+  technicalSpecs: [
+    "Hook Engineering Architecture",
+    "Creative Cockpit Matrices",
+    "Multi-Modal Prompt Pipelines",
+    "Automated Typography & Layout",
+    "24–48h Production Delivery",
+    "Asset Scaling Framework",
+  ],
+  coverImage: "/assets/images/ai-graphics-blueprint-cover.png",
+  gallery: [
+    {
+      title: "Blueprint Framework",
+      src: "/assets/images/ai-graphics-blueprint-framework.png",
+      caption: "Architecture & Foundation",
+    },
+    {
+      title: "Execution Matrix",
+      src: "/assets/images/ai-graphics-blueprint-execution.png",
+      caption: "Variant Scaling & Hook Testing",
+    },
+    {
+      title: "Process Pipeline",
+      src: "/assets/images/ai-graphics-blueprint-process.png",
+      caption: "Prompt-to-Delivery Operations",
+    },
+    {
+      title: "System Overview",
+      src: "/assets/images/ai-graphics-blueprint-system.png",
+      caption: "Multi-Channel Distribution",
+    },
+  ],
+};
 ---
 
-<section
-  id="projects"
-  class="py-12 border-t border-[#ffffff10] text-[var(--white)]"
->
+<section id="projects" class="py-16 border-t border-[#ffffff10] text-[var(--white)] scroll-mt-24">
   <div class="max-w-5xl mx-auto">
-    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My work</h2>
-    <h3 class="text-4xl md:text-5xl font-medium mb-8">Projects</h3>
+    <!-- Header -->
+    <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-[var(--sec)]"></span>
+          <h2 class="text-xs font-mono uppercase tracking-widest text-[var(--sec)] shiny-sec">
+            Documented Case Studies
+          </h2>
+        </div>
+        <h3 class="text-3xl md:text-5xl font-medium tracking-tight">
+          Featured Projects
+        </h3>
+      </div>
+      <p class="text-sm md:text-base text-[var(--white-icon)] max-w-md">
+        Verified creative pipelines and production architectures executed by Emmanuel Umaru.
+      </p>
+    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {
-        projects.map((project) => (
-          <div class="group">
-            <a
-              href={project.preview}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block"
-            >
-              <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div class="flex items-center px-3">
-                <div class="flex-grow">
-                  <h4 class="text-2xl font-semibold">{project.title}</h4>
-                  <span class="py-1 text-sm text-[var(--white-icon)]">
-                    {project.status}
+    <!-- Case Study 01: True Words Podcast -->
+    <div class="mb-16 rounded-3xl border border-white/10 bg-[#14141460] backdrop-blur-md overflow-hidden p-6 md:p-8 hover:border-[var(--sec)]/40 transition-all duration-300">
+      <!-- Project Metadata -->
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="px-3 py-1 rounded-full text-xs font-medium bg-[var(--sec)]/20 text-[#caa8ff] border border-[var(--sec)]/30">
+          Case Study 01
+        </span>
+        <span class="text-xs font-mono text-[var(--white-icon)]">
+          {trueWordsProject.domain}
+        </span>
+      </div>
+
+      <h4 class="text-2xl md:text-3xl font-semibold text-white mb-2 leading-tight">
+        {trueWordsProject.title}
+      </h4>
+
+      <p class="text-sm md:text-base text-[var(--white-icon)] mb-6 max-w-3xl leading-relaxed">
+        {trueWordsProject.description}
+      </p>
+
+      <!-- 16:9 Full Episode Master Video Player -->
+      <div class="mb-8 rounded-2xl overflow-hidden border border-white/10 bg-black relative group">
+        <video
+          id="true-words-master"
+          class="w-full aspect-video object-cover"
+          poster={trueWordsProject.fullMasterVideo.poster}
+          preload="metadata"
+          playsinline
+        >
+          <source src={trueWordsProject.fullMasterVideo.src} type="video/mp4" />
+          Your browser does not support video.
+        </video>
+
+        <!-- Video Play Overlay -->
+        <button
+          type="button"
+          class="project-play-btn absolute inset-0 w-full h-full flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors group cursor-pointer"
+          data-video-id="true-words-master"
+          aria-label="Play True Words Full Episode"
+        >
+          <div class="size-16 md:size-20 rounded-full bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-[var(--sec)]/80">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8 md:size-10 translate-x-0.5 play-icon">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8 md:size-10 pause-icon hidden">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+          </div>
+        </button>
+
+        <!-- Player Badges -->
+        <div class="absolute bottom-3 right-3 flex items-center gap-2 z-10">
+          <span class="px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-white text-xs font-mono border border-white/10">
+            {trueWordsProject.fullMasterVideo.title} • {trueWordsProject.fullMasterVideo.duration}
+          </span>
+        </div>
+      </div>
+
+      <!-- Vertical Shorts Row (9:16) -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h5 class="text-sm font-semibold text-white uppercase font-mono tracking-wider">
+            Short-Form Episodic Cuts (9:16 Vertical)
+          </h5>
+          <span class="text-xs text-[var(--white-icon)] font-mono">3 Multi-Format Deliverables</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {trueWordsProject.shorts.map((short, idx) => (
+            <div class="rounded-xl border border-white/10 bg-[#121212] overflow-hidden flex flex-col justify-between group/short">
+              <div class="relative bg-black">
+                <video
+                  id={`tw-short-${idx}`}
+                  class="w-full h-64 md:h-72 object-cover"
+                  poster={short.poster}
+                  preload="metadata"
+                  playsinline
+                >
+                  <source src={short.src} type="video/mp4" />
+                </video>
+
+                <button
+                  type="button"
+                  class="project-play-btn absolute inset-0 w-full h-full flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors cursor-pointer"
+                  data-video-id={`tw-short-${idx}`}
+                  aria-label={`Play ${short.title}`}
+                >
+                  <div class="size-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white transition-transform group-hover/short:scale-110 group-hover/short:bg-[var(--sec)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 translate-x-0.5 play-icon">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 pause-icon hidden">
+                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                    </svg>
+                  </div>
+                </button>
+
+                <div class="absolute top-2 left-2 z-10">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-black/70 text-white border border-white/10">
+                    {short.tag}
                   </span>
                 </div>
-                <div class="flex gap-2 ml-auto">
-                  <a
-                    target="_blank"
-                    href={project.link}
-                    aria-label="GitHub"
-                    class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-7"
-                    >
-                      <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
-                    </svg>
-                  </a>
-                  <a
-                    target="_blank"
-                    href={project.preview}
-                    aria-label="Preview"
-                    class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-7"
-                    >
-                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
-                    </svg>
-                  </a>
+
+                <div class="absolute bottom-2 right-2 z-10">
+                  <span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-black/70 text-white">
+                    {short.duration}
+                  </span>
                 </div>
               </div>
-            </a>
-          </div>
-        ))
-      }
+
+              <div class="p-3">
+                <h6 class="text-xs font-semibold text-white">{short.title}</h6>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Technical Architecture Badges -->
+      <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+        {trueWordsProject.technicalSpecs.map((spec) => (
+          <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-white/5 border border-white/5 text-[var(--white-icon)]">
+            {spec}
+          </span>
+        ))}
+      </div>
     </div>
-    <a
-      target="_blank"
-      href="https://github.com"
-      aria-label="GitHub"
-      class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)] hover:scale-105"
-    >
-      <span class="md:text-lg text-md">More projects on</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="size-6"
-      >
-        <path
-          d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"
-        ></path>
-      </svg>
-    </a>
+
+    <!-- Case Study 02: AI Graphics Business Blueprint -->
+    <div class="rounded-3xl border border-white/10 bg-[#14141460] backdrop-blur-md overflow-hidden p-6 md:p-8 hover:border-[var(--sec)]/40 transition-all duration-300">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="px-3 py-1 rounded-full text-xs font-medium bg-[var(--sec)]/20 text-[#caa8ff] border border-[var(--sec)]/30">
+          Case Study 02
+        </span>
+        <span class="text-xs font-mono text-[var(--white-icon)]">
+          {aiGraphicsProject.domain}
+        </span>
+      </div>
+
+      <h4 class="text-2xl md:text-3xl font-semibold text-white mb-2 leading-tight">
+        {aiGraphicsProject.title}
+      </h4>
+
+      <p class="text-sm md:text-base text-[var(--white-icon)] mb-6 max-w-3xl leading-relaxed">
+        {aiGraphicsProject.description}
+      </p>
+
+      <!-- Featured Master Blueprint Graphic -->
+      <div class="mb-6 rounded-2xl overflow-hidden border border-white/10 bg-[#181818]">
+        <img
+          src={aiGraphicsProject.coverImage}
+          alt={aiGraphicsProject.title}
+          class="w-full h-auto max-h-[500px] object-cover hover:scale-[1.01] transition-transform duration-500"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Sub-Graphics Gallery -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h5 class="text-sm font-semibold text-white uppercase font-mono tracking-wider">
+            System Artifacts & Execution Matrices
+          </h5>
+          <span class="text-xs text-[var(--white-icon)] font-mono">4 Architecture Plates</span>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {aiGraphicsProject.gallery.map((item) => (
+            <div class="rounded-xl border border-white/10 bg-[#121212] overflow-hidden group/art">
+              <div class="overflow-hidden aspect-video bg-[#0c0c0c]">
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  class="w-full h-full object-cover group-hover/art:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-2.5">
+                <h6 class="text-xs font-semibold text-white truncate">{item.title}</h6>
+                <p class="text-[11px] text-[var(--white-icon)] truncate">{item.caption}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Technical Tags -->
+      <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+        {aiGraphicsProject.technicalSpecs.map((spec) => (
+          <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-white/5 border border-white/5 text-[var(--white-icon)]">
+            {spec}
+          </span>
+        ))}
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  // Project Video Playback
+  document.addEventListener("DOMContentLoaded", () => {
+    const playButtons = document.querySelectorAll<HTMLButtonElement>(".project-play-btn");
+
+    playButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const videoId = btn.getAttribute("data-video-id");
+        if (!videoId) return;
+
+        const video = document.getElementById(videoId) as HTMLVideoElement | null;
+        if (!video) return;
+
+        const playIcon = btn.querySelector(".play-icon");
+        const pauseIcon = btn.querySelector(".pause-icon");
+
+        if (video.paused) {
+          // Pause other videos
+          document.querySelectorAll<HTMLVideoElement>("video").forEach((v) => {
+            if (v !== video && !v.paused) {
+              v.pause();
+              const otherBtn = document.querySelector(`.project-play-btn[data-video-id="${v.id}"]`);
+              if (otherBtn) {
+                otherBtn.querySelector(".play-icon")?.classList.remove("hidden");
+                otherBtn.querySelector(".pause-icon")?.classList.add("hidden");
+              }
+            }
+          });
+
+          video.play().then(() => {
+            playIcon?.classList.add("hidden");
+            pauseIcon?.classList.remove("hidden");
+          }).catch(() => {});
+        } else {
+          video.pause();
+          playIcon?.classList.remove("hidden");
+          pauseIcon?.classList.add("hidden");
+        }
+      });
+    });
+
+    document.querySelectorAll<HTMLVideoElement>("video").forEach((v) => {
+      v.addEventListener("ended", () => {
+        const btn = document.querySelector(`.project-play-btn[data-video-id="${v.id}"]`);
+        if (btn) {
+          btn.querySelector(".play-icon")?.classList.remove("hidden");
+          btn.querySelector(".pause-icon")?.classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>

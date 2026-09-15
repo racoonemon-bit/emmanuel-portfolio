@@ -1,0 +1,133 @@
+---
+interface Capability {
+  number: string;
+  title: string;
+  overview: string;
+  points: string[];
+}
+
+const capabilities: Capability[] = [
+  {
+    number: "01",
+    title: "Generative Visual Engineering",
+    overview: "Engineering multi-modal prompt architectures with negative token libraries, lighting physics, and boundary masking to preserve product fidelity.",
+    points: [
+      "Multi-modal prompt architectures & structural tokens",
+      "Boundary masking & depth mapping for product fidelity",
+      "Directional lighting control (45° rake, diffuse softbox)",
+      "Batch variant generation across demographic angles",
+    ],
+  },
+  {
+    number: "02",
+    title: "Motion Design & Video Repurposing",
+    overview: "Transforming raw studio footage into retention-optimized narrative arcs with motivated camera movement and verbatim color-sampled kinetic typography.",
+    points: [
+      "Narrative slicing & speech cadence rhythm control",
+      "Motivated camera punch-ins (1.04x to 1.28x reframing)",
+      "Verbatim kinetic subtitles color-matched to studio sets",
+      "J-cut dialogue continuity across scene transitions",
+    ],
+  },
+  {
+    number: "03",
+    title: "Audio Engineering & Acoustic Restoration",
+    overview: "Broadcast-grade acoustic cleanup, vocal EQ tuning, soft-knee dynamic control, and calibrated continuous sidechain music ducking.",
+    points: [
+      "85Hz high-pass filtering & 60Hz mains hum notch EQ",
+      "+2.2dB vocal presence sculpting at 3.2kHz",
+      "Peak dialogue normalization at -1.0 dBFS",
+      "Dynamic background music ducking calibrated to -15 dBFS",
+    ],
+  },
+  {
+    number: "04",
+    title: "AI Avatar Creation & Synthetic Presenters",
+    overview: "Developing brand-aligned virtual avatars and synthetic video spokespersons paired with neural text-to-speech models and virtual studio backdrops.",
+    points: [
+      "Photorealistic digital avatar generation for corporate media",
+      "Neural voiceover synthesis & facial lip-sync integration",
+      "Virtual broadcast studio and architectural stage staging",
+      "Automated explainer generation for digital communications",
+    ],
+  },
+  {
+    number: "05",
+    title: "Creative Strategy & Campaign Architecture",
+    overview: "Translating consumer psychology into high-converting 3-second visual hooks, launch checklists, and cross-channel campaign content calendars.",
+    points: [
+      "100+ task launch checklists spanning pre- to post-launch",
+      "Brand visual grammar blueprints & aesthetic guidelines",
+      "Direct-response ad copywriting across multi-tier funnels",
+      "Cross-channel organic & paid scheduling (8–12 weeks)",
+    ],
+  },
+  {
+    number: "06",
+    title: "Workflow Automation & Technical Scripting",
+    overview: "Building automated Python and CLI scripts to validate image resolution, contrast ratios, and video render integrity prior to client handoff.",
+    points: [
+      "Automated verification gates (resolution, contrast, labels)",
+      "Headless FFmpeg and Remotion CLI batch transcode pipelines",
+      "Structured YAML/JSON schemas for pipeline reproducibility",
+      "Git-versioned creative workspaces and asset manifests",
+    ],
+  },
+];
+---
+
+<section id="capabilities" class="py-16 border-t border-[#ffffff10] text-[var(--white)] scroll-mt-24">
+  <div class="max-w-5xl mx-auto">
+    <!-- Header -->
+    <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-[var(--sec)]"></span>
+          <h2 class="text-xs font-mono uppercase tracking-widest text-[var(--sec)] shiny-sec">
+            Technical Competencies
+          </h2>
+        </div>
+        <h3 class="text-3xl md:text-5xl font-medium tracking-tight">
+          Capabilities
+        </h3>
+      </div>
+      <p class="text-sm md:text-base text-[var(--white-icon)] max-w-md">
+        Systematic, empirical methodology applied directly to prompt design, model calibration, video orchestration, and workflow architecture.
+      </p>
+    </div>
+
+    <!-- Capabilities Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {capabilities.map((cap) => (
+        <div class="rounded-2xl border border-white/10 bg-[#14141470] backdrop-blur-md p-6 flex flex-col justify-between hover:border-[var(--sec)]/40 hover:bg-[#161616] transition-all duration-300 group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-white/5 text-[var(--sec)] border border-white/5">
+                {cap.number}
+              </span>
+            </div>
+
+            <h4 class="text-lg font-semibold text-white mb-2 leading-snug group-hover:text-[var(--sec)] transition-colors">
+              {cap.title}
+            </h4>
+
+            <p class="text-xs md:text-sm text-[var(--white-icon)] mb-5 leading-relaxed">
+              {cap.overview}
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/5">
+            <ul class="space-y-1.5">
+              {cap.points.map((pt) => (
+                <li class="text-xs text-[var(--white-icon)] flex items-start gap-2">
+                  <span class="text-[var(--sec)] text-xs mt-0.5">•</span>
+                  <span class="leading-relaxed">{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
