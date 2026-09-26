@@ -16,32 +16,25 @@ const trueWordsProject = {
     "Zero-Template Kinetic Subtitles",
   ],
   fullMasterVideo: {
-    title: "Full 76s Master Episode (1080p Landscape)",
-    src: "/assets/videos/true-words-youtube-full-episode-1080p.mp4",
-    poster: "/assets/images/true-words-youtube-full-episode-1080p-poster.jpg",
-    duration: "1:16",
+    title: "Full Master Episode: Season 1 Episode 2 (1080p Landscape)",
+    src: "/assets/videos/TRUE_WORDS_S1_EP2_FINAL.mp4",
+    poster: "/assets/images/TRUE_WORDS_S1_EP2_FINAL-poster.jpg",
+    duration: "1:15",
   },
   shorts: [
     {
-      title: "Short 01: Episode Hook",
-      tag: "Thesis Statement",
-      src: "/assets/videos/true-words-short-01-episode-hook-9x16.mp4",
-      poster: "/assets/images/true-words-short-01-episode-hook-9x16-poster.jpg",
-      duration: "0:25",
+      title: "Episode 06: Vertical Reel",
+      tag: "Episodic Reel",
+      src: "/assets/videos/true_words_ep06_reel.mp4",
+      poster: "/assets/images/true_words_ep06_reel-poster.jpg",
+      duration: "1:08",
     },
     {
-      title: "Short 02: Hero Quote",
-      tag: "Emotional Centerpiece",
-      src: "/assets/videos/true-words-short-02-hero-quote-9x16.mp4",
-      poster: "/assets/images/true-words-short-02-hero-quote-9x16-poster.jpg",
-      duration: "0:16",
-    },
-    {
-      title: "Short 03: Growth Routine",
-      tag: "Philosophical Resolution",
-      src: "/assets/videos/true-words-short-03-growth-routine-9x16.mp4",
-      poster: "/assets/images/true-words-short-03-growth-routine-9x16-poster.jpg",
-      duration: "0:22",
+      title: "Episode 07: Vertical Reel",
+      tag: "Episodic Reel",
+      src: "/assets/videos/true_words_ep07_reel.mp4",
+      poster: "/assets/images/true_words_ep07_reel-poster.jpg",
+      duration: "1:00",
     },
   ],
 };
@@ -132,7 +125,7 @@ const aiGraphicsProject = {
       <div class="mb-8 rounded-2xl overflow-hidden border border-white/10 bg-black relative group">
         <video
           id="true-words-master"
-          class="w-full aspect-video object-cover"
+          class="w-full aspect-video object-contain"
           poster={trueWordsProject.fullMasterVideo.poster}
           preload="metadata"
           playsinline
@@ -172,16 +165,16 @@ const aiGraphicsProject = {
           <h5 class="text-sm font-semibold text-white uppercase font-mono tracking-wider">
             Short-Form Episodic Cuts (9:16 Vertical)
           </h5>
-          <span class="text-xs text-[var(--white-icon)] font-mono">3 Multi-Format Deliverables</span>
+          <span class="text-xs text-[var(--white-icon)] font-mono">{trueWordsProject.shorts.length} Multi-Format Deliverables</span>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
           {trueWordsProject.shorts.map((short, idx) => (
             <div class="rounded-xl border border-white/10 bg-[#121212] overflow-hidden flex flex-col justify-between group/short">
-              <div class="relative bg-black">
+              <div class="relative bg-black aspect-[9/16] flex items-center justify-center overflow-hidden">
                 <video
                   id={`tw-short-${idx}`}
-                  class="w-full h-64 md:h-72 object-cover"
+                  class="w-full h-full object-contain"
                   poster={short.poster}
                   preload="metadata"
                   playsinline
