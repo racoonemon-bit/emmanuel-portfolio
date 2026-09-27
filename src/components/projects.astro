@@ -69,6 +69,26 @@ const aiGraphicsProject = {
     },
   ],
 };
+
+const immersiveProject = {
+  id: "immersive-experience",
+  title: "AI CREATIVE & DIGITAL SPECIALIST IMMERSIVE PORTFOLIO EXPERIENCE",
+  type: "SELF-INITIATED / DIGITAL EXPERIENCE",
+  role: "Creative Direction · UX/UI · Frontend Development",
+  systemLabel: "Creative Technology · Interactive Media · Custom Frontend System",
+  description: "An immersive portfolio experience designed as a digital magazine, creative laboratory, and interactive exhibition — combining editorial typography, cinematic motion, interactive behavior, and a custom 300-frame hero sequence.",
+  liveUrl: "https://creative-signal-portfolio.netlify.app",
+  cta: "VIEW LIVE EXPERIENCE →",
+  coverImage: "/assets/images/creative-platform-hero-banner.jpg",
+  technicalSpecs: [
+    "Editorial Typography System",
+    "Cinematic Motion & Scrollytelling",
+    "300-Frame Hero Sequence",
+    "Interactive Creative Lab",
+    "Responsive Multi-Device Layout",
+    "Custom Frontend Architecture",
+  ],
+};
 ---
 
 <section id="projects" class="py-16 border-t border-[#ffffff10] text-[var(--white)] scroll-mt-24">
@@ -284,6 +304,81 @@ const aiGraphicsProject = {
             {spec}
           </span>
         ))}
+      </div>
+    </div>
+
+    <!-- Self-Initiated Project: Immersive Experience -->
+    <div class="rounded-3xl border border-white/10 bg-[#14141460] backdrop-blur-md overflow-hidden p-6 md:p-8 hover:border-[var(--sec)]/40 transition-all duration-300">
+      <!-- Project Metadata / Type Badge -->
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="px-3 py-1 rounded-full text-xs font-medium bg-[var(--sec)]/20 text-[#caa8ff] border border-[var(--sec)]/30">
+          {immersiveProject.type}
+        </span>
+        <span class="text-xs font-mono text-[var(--white-icon)]">
+          {immersiveProject.systemLabel}
+        </span>
+      </div>
+
+      <h4 class="text-2xl md:text-3xl font-semibold text-white mb-2 leading-tight">
+        AI CREATIVE & DIGITAL SPECIALIST<br />
+        IMMERSIVE PORTFOLIO EXPERIENCE
+      </h4>
+
+      <p class="text-sm md:text-base text-[var(--white-icon)] mb-4 max-w-3xl leading-relaxed">
+        {immersiveProject.description}
+      </p>
+
+      <!-- Role & System Metadata -->
+      <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs font-mono text-[var(--white-icon)] mb-6">
+        <div>
+          <span class="text-[var(--sec)] font-semibold">Role:</span> {immersiveProject.role}
+        </div>
+        <span class="hidden sm:inline text-white/20">•</span>
+        <div>
+          <span class="text-[var(--sec)] font-semibold">System:</span> {immersiveProject.systemLabel}
+        </div>
+      </div>
+
+      <!-- Featured Project Visual -->
+      <div class="mb-6 rounded-2xl overflow-hidden border border-white/10 bg-[#181818] flex items-center justify-center group/preview">
+        <a
+          href={immersiveProject.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full h-full cursor-pointer"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <img
+            src={immersiveProject.coverImage}
+            alt="AI CREATIVE & DIGITAL SPECIALIST IMMERSIVE PORTFOLIO EXPERIENCE"
+            class="w-full h-auto max-h-[500px] object-cover group-hover/preview:scale-[1.01] transition-transform duration-500"
+            loading="lazy"
+          />
+        </a>
+      </div>
+
+      <!-- Technical Tags & Live CTA -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-white/10">
+        <div class="flex flex-wrap gap-2">
+          {immersiveProject.technicalSpecs.map((spec) => (
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-white/5 border border-white/5 text-[var(--white-icon)]">
+              {spec}
+            </span>
+          ))}
+        </div>
+
+        <div class="flex-shrink-0 w-full sm:w-auto">
+          <a
+            href={immersiveProject.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl bg-[var(--sec)] text-black font-semibold text-xs md:text-sm hover:brightness-110 transition-all duration-200 shadow-[0_0_20px_rgba(164,118,255,0.25)] focus:outline-none focus:ring-2 focus:ring-[var(--sec)] focus:ring-offset-2 focus:ring-offset-[#101010] active:scale-95"
+            aria-label="VIEW LIVE EXPERIENCE →"
+          >
+            <span>{immersiveProject.cta}</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
