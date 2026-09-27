@@ -72,14 +72,14 @@ const aiGraphicsProject = {
 
 const immersiveProject = {
   id: "immersive-experience",
-  title: "AI CREATIVE & DIGITAL SPECIALIST IMMERSIVE PORTFOLIO EXPERIENCE",
+  title: "AI CREATIVE & DIGITAL SPECIALIST — IMMERSIVE DIGITAL EXPERIENCE",
   type: "SELF-INITIATED / DIGITAL EXPERIENCE",
   role: "Creative Direction · UX/UI · Frontend Development",
   systemLabel: "Creative Technology · Interactive Media · Custom Frontend System",
-  description: "An immersive portfolio experience designed as a digital magazine, creative laboratory, and interactive exhibition — combining editorial typography, cinematic motion, interactive behavior, and a custom 300-frame hero sequence.",
+  description: "A self-initiated demonstration of the immersive digital experiences I create — combining art direction, AI-assisted visual development, editorial design, motion, interaction, and custom creative technology to turn a portfolio or brand into a living digital environment.",
   liveUrl: "https://creative-signal-portfolio.netlify.app",
   cta: "VIEW LIVE EXPERIENCE →",
-  coverImage: "/assets/images/creative-platform-hero-banner.jpg",
+  coverImage: "/assets/images/immersive-experience-hero.jpg",
   technicalSpecs: [
     "Editorial Typography System",
     "Cinematic Motion & Scrollytelling",
@@ -320,8 +320,7 @@ const immersiveProject = {
       </div>
 
       <h4 class="text-2xl md:text-3xl font-semibold text-white mb-2 leading-tight">
-        AI CREATIVE & DIGITAL SPECIALIST<br />
-        IMMERSIVE PORTFOLIO EXPERIENCE
+        {immersiveProject.title}
       </h4>
 
       <p class="text-sm md:text-base text-[var(--white-icon)] mb-4 max-w-3xl leading-relaxed">
@@ -351,7 +350,7 @@ const immersiveProject = {
         >
           <img
             src={immersiveProject.coverImage}
-            alt="AI CREATIVE & DIGITAL SPECIALIST IMMERSIVE PORTFOLIO EXPERIENCE"
+            alt={immersiveProject.title}
             class="w-full h-auto max-h-[500px] object-cover group-hover/preview:scale-[1.01] transition-transform duration-500"
             loading="lazy"
           />
