@@ -46,7 +46,7 @@ const aiGraphicsProject = {
   role: "Performance Creative Strategist & AI Producer",
   status: "Production Blueprint & Framework",
   headline: "Structured operational framework translating consumer psychological friction points into 3-second visual hooks.",
-  description: "Engineered rapid variant testing matrices (5 visual hooks across 3 benefit angles) with multi-modal prompt pipelines, automated typography, and audio normalization to deliver paid social creatives within 24–48 hours.",
+  description: "ORIAN™ — Visuals Reimagined is a self-initiated creative concept exploring how brand identities transform into compelling visual worlds. Spanning luxury skincare, multi-tone beauty campaigns, botanical storytelling, ethereal fragrance staging, and high-fashion menswear editorial, the project demonstrates how deliberate art direction, composition, and lighting can help prospective brands envision elevated marketing visuals.",
   technicalSpecs: [
     "Hook Engineering Architecture",
     "Creative Cockpit Matrices",
@@ -55,17 +55,56 @@ const aiGraphicsProject = {
     "24–48h Production Delivery",
     "Asset Scaling Framework",
   ],
-  coverImage: "/assets/images/case-study-02/Hero.png",
+  coverImage: "/assets/images/case-study-02/Luxury Pink Serum Beauty Advertisement.png",
+  coverAlt: "Macro beauty advertisement featuring a model with glossy lips resting a manicured finger on an ORIAN dual-phase pink and orange serum bottle atop an inflated pink cushion.",
   gallery: [
     {
-      title: "Blueprint Framework",
-      src: "/assets/images/case-study-02/campaign.jpeg",
-      caption: "Architecture & Foundation",
+      title: "Dual-Phase Hero Serum",
+      src: "/assets/images/case-study-02/Luxury Pink Serum Beauty Advertisement.png",
+      caption: "Tactile beauty advertisement highlighting formulation texture and packaging",
+      alt: "Macro beauty advertisement featuring a model with glossy lips resting a manicured finger on an ORIAN dual-phase pink and orange serum bottle atop an inflated pink cushion.",
     },
     {
-      title: "Execution Matrix",
-      src: "/assets/images/case-study-02/variants.jpeg",
-      caption: "Variant Scaling & Hook Testing",
+      title: "Everyday Lifestyle Staging",
+      src: "/assets/images/case-study-02/ORIAN Serum in Denim Pocket.png",
+      caption: "Tactile product placement contrasting raw denim weave with frosted glass cosmetics",
+      alt: "Two frosted ORIAN dual-phase serum bottles tucked into the front pocket of light-wash denim jeans with a manicured hand reaching toward them.",
+    },
+    {
+      title: "Milk Muse Inclusivity",
+      src: "/assets/images/case-study-02/Orian Milk Muse Beauty Campaign.png",
+      caption: "Symmetrical multi-model framing celebrating diverse skin tones and barrier skincare",
+      alt: "A matte nude bottle of ORIAN Milk Muse cleanser framed symmetrically between two female models with different skin tones looking upward.",
+    },
+    {
+      title: "Botanical Storytelling",
+      src: "/assets/images/case-study-02/Pink Strawberry Serum Beauty Portrait.png",
+      caption: "Playful editorial portrait connecting fresh fruit ingredient cues with finished serum formulation",
+      alt: "A woman with short dark hair in a pink linen shirt balancing a fresh strawberry on her head while holding an ORIAN de-pigmentation serum bottle against a pink background.",
+    },
+    {
+      title: "Cherry Noir Fragrance",
+      src: "/assets/images/case-study-02/_Image_p8gz51p8gz51p8gz.jpg",
+      caption: "Cinematic fragrance worldbuilding featuring faceted flacon, botanical knoll, and golden-hour sunset lighting",
+      alt: "A faceted ruby glass bottle of ORIAN Cherry Noir perfume on a mossy knoll surrounded by wildflowers and a flying white dove against a sunset sky.",
+    },
+    {
+      title: "Tailored Menswear Editorial",
+      src: "/assets/images/case-study-02/_Image_lhu8colhu8colhu8.jpg",
+      caption: "High-fashion outerwear direction with dramatic chiaroscuro studio lighting and precise fabric tailoring",
+      alt: "Male model wearing a tailored navy double-breasted trench coat with tied belt and turtleneck against a deep blue gradient background with dramatic directional lighting.",
+    },
+    {
+      title: "Architectural Silhouette",
+      src: "/assets/images/case-study-02/_Image_pbc6pvpbc6pvpbc6.jpg",
+      caption: "Minimalist profile campaign focusing on structured outerwear, modern eyewear, and clean negative space",
+      alt: "Side profile of a male model wearing black sunglasses, an olive turtleneck, and a structured black wool overcoat against a slate-teal gradient backdrop.",
+    },
+    {
+      title: "Campaign Identity Lockup",
+      src: "/assets/images/case-study-02/_Image_pdi89mpdi89mpdi8.jpg",
+      caption: "Commercial campaign layout demonstrating brand typography integration within editorial negative space",
+      alt: "Commercial campaign visual featuring the male model in black tailored overcoat and sunglasses with bold ORIAN Visuals Reimagined typography integrated into the teal background.",
     },
   ],
 };
@@ -262,7 +301,7 @@ const immersiveProject = {
       <div class="mb-6 rounded-2xl overflow-hidden border border-white/10 bg-[#181818] flex items-center justify-center">
         <img
           src={aiGraphicsProject.coverImage}
-          alt={aiGraphicsProject.title}
+          alt={aiGraphicsProject.coverAlt || aiGraphicsProject.title}
           class="w-full h-auto max-h-[650px] object-contain hover:scale-[1.01] transition-transform duration-500"
           loading="lazy"
         />
@@ -283,14 +322,14 @@ const immersiveProject = {
               <div class="overflow-hidden aspect-[4/3] bg-[#0c0c0c]">
                 <img
                   src={item.src}
-                  alt={item.title}
+                  alt={item.alt || item.title}
                   class="w-full h-full object-cover group-hover/art:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
               <div class="p-2.5">
                 <h6 class="text-xs font-semibold text-white truncate">{item.title}</h6>
-                <p class="text-[11px] text-[var(--white-icon)] truncate">{item.caption}</p>
+                <p class="text-[11px] text-[var(--white-icon)] truncate" title={item.caption}>{item.caption}</p>
               </div>
             </div>
           ))}

@@ -25,8 +25,7 @@
       <!-- Contact Info Cards Column -->
       <div class="lg:col-span-5 space-y-4">
         <!-- Email Card -->
-        <a
-          href="mailto:emmanuelumaru945@gmail.com"
+        <div
           class="block p-5 rounded-2xl border border-white/10 bg-[#14141470] backdrop-blur-md hover:border-[var(--sec)]/50 hover:bg-[#161616] transition-all duration-300 group"
         >
           <div class="flex items-center gap-3.5 mb-2">
@@ -40,12 +39,12 @@
               <span class="text-xs font-mono uppercase tracking-wider text-[var(--white-icon)] block">
                 Direct Email
               </span>
-              <span class="text-sm md:text-base font-semibold text-white group-hover:text-[var(--sec)] transition-colors">
+              <span class="text-sm md:text-base font-semibold text-white group-hover:text-[var(--sec)] transition-colors select-all">
                 emmanuelumaru945@gmail.com
               </span>
             </div>
           </div>
-        </a>
+        </div>
 
         <!-- Phone / WhatsApp Card -->
         <a
@@ -95,50 +94,135 @@
 
         <form
           id="contact-form"
-          action="mailto:emmanuelumaru945@gmail.com"
+          name="contact"
+          action="/"
           method="POST"
-          enctype="text/plain"
-          class="flex flex-col gap-4"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          data-netlify-honeypot="bot-field"
+          class="flex flex-col gap-4 scroll-mt-24"
+          novalidate
         >
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-              class="px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-              class="px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm"
-            />
+          <input type="hidden" name="form-name" value="contact" />
+
+          <div class="visually-hidden" aria-hidden="true">
+            <label for="contact-bot-field">
+              Don’t fill this out if you’re human:
+              <input
+                id="contact-bot-field"
+                type="text"
+                name="bot-field"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </label>
           </div>
 
-          <input
-            type="text"
-            name="subject"
-            placeholder="Project or Inquiry Subject"
-            required
-            class="px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm"
-          />
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex flex-col">
+              <label for="contact-name" class="text-xs font-mono uppercase tracking-wider text-[var(--white-icon)] mb-1.5">
+                Name <span class="text-[var(--sec)]" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="contact-name"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                autocomplete="name"
+                aria-errormessage="contact-name-error"
+                class="contact-input px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm"
+              />
+              <div id="contact-name-error" class="field-error text-xs text-red-400 mt-1.5">
+                <span aria-hidden="true">⚠</span> Please enter your name.
+              </div>
+            </div>
 
-          <textarea
-            name="message"
-            placeholder="Tell me about your project, timeline, or objectives..."
-            rows="5"
-            required
-            class="px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm resize-none"
-          ></textarea>
+            <div class="flex flex-col">
+              <div class="flex items-baseline justify-between gap-2 mb-1.5">
+                <label for="contact-email" class="text-xs font-mono uppercase tracking-wider text-[var(--white-icon)]">
+                  Email <span class="text-[var(--sec)]" aria-hidden="true">*</span>
+                </label>
+                <span id="contact-email-hint" class="text-[11px] text-[var(--white-icon)] font-mono">
+                  name@domain.com
+                </span>
+              </div>
+              <input
+                id="contact-email"
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                autocomplete="email"
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+                aria-describedby="contact-email-hint"
+                aria-errormessage="contact-email-error"
+                class="contact-input px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm"
+              />
+              <div id="contact-email-error" class="field-error text-xs text-red-400 mt-1.5">
+                <span aria-hidden="true">⚠</span> Please enter a valid email address.
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col">
+            <label for="contact-subject" class="text-xs font-mono uppercase tracking-wider text-[var(--white-icon)] mb-1.5">
+              Subject <span class="text-[var(--sec)]" aria-hidden="true">*</span>
+            </label>
+            <input
+              id="contact-subject"
+              type="text"
+              name="subject"
+              placeholder="Project or Inquiry Subject"
+              required
+              aria-errormessage="contact-subject-error"
+              class="contact-input px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm"
+            />
+            <div id="contact-subject-error" class="field-error text-xs text-red-400 mt-1.5">
+              <span aria-hidden="true">⚠</span> Please enter a subject for your inquiry.
+            </div>
+          </div>
+
+          <div class="flex flex-col">
+            <label for="contact-message" class="text-xs font-mono uppercase tracking-wider text-[var(--white-icon)] mb-1.5">
+              Message <span class="text-[var(--sec)]" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              placeholder="Tell me about your project, timeline, or objectives..."
+              rows="5"
+              required
+              aria-errormessage="contact-message-error"
+              class="contact-input px-4 py-3 bg-[#181818] text-white border border-white/10 rounded-xl focus:outline-none focus:border-[var(--sec)] text-sm resize-y"
+            ></textarea>
+            <div id="contact-message-error" class="field-error text-xs text-red-400 mt-1.5">
+              <span aria-hidden="true">⚠</span> Please enter your message.
+            </div>
+          </div>
+
+          <div
+            id="contact-form-status"
+            role="status"
+            aria-live="polite"
+            class="hidden rounded-xl px-4 py-3 text-xs md:text-sm border"
+          ></div>
 
           <button
+            id="contact-submit-btn"
             type="submit"
-            class="px-6 py-3.5 bg-[var(--sec)] text-black font-semibold rounded-xl text-sm hover:brightness-110 transition-all shadow-[0_0_20px_rgba(164,118,255,0.2)] flex items-center justify-center gap-2 self-start"
+            class="px-6 py-3.5 bg-[var(--sec)] text-black font-semibold rounded-xl text-sm hover:brightness-110 transition-all shadow-[0_0_20px_rgba(164,118,255,0.2)] flex items-center justify-center gap-2 self-start disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <span>Send Inquiry</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+            <span id="contact-submit-text">Send Inquiry</span>
+            <svg
+              id="contact-submit-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-4"
+            >
               <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
             </svg>
           </button>
@@ -147,3 +231,188 @@
     </div>
   </div>
 </section>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    clip-path: inset(50%);
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+  }
+
+  .field-error {
+    display: none;
+  }
+
+  .contact-input:user-invalid,
+  .contact-input.user-invalid-fallback,
+  .contact-input[aria-invalid="true"] {
+    border-color: #f87171;
+    background-color: rgba(248, 113, 113, 0.08);
+  }
+
+  .contact-input:user-invalid + .field-error,
+  .contact-input.user-invalid-fallback + .field-error,
+  .contact-input[aria-invalid="true"] + .field-error {
+    display: block;
+  }
+
+  .contact-input:required:user-valid {
+    border-color: rgba(52, 211, 153, 0.5);
+  }
+</style>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const submitBtn = document.getElementById("contact-submit-btn") as HTMLButtonElement | null;
+  const submitText = document.getElementById("contact-submit-text") as HTMLSpanElement | null;
+  const statusEl = document.getElementById("contact-form-status") as HTMLDivElement | null;
+
+  if (form && submitBtn && submitText && statusEl) {
+    let isSubmitting = false;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const validateControl = (control: HTMLInputElement | HTMLTextAreaElement): boolean => {
+      control.setCustomValidity("");
+      const value = control.value.trim();
+      if (control.name === "email") {
+        const isEmailValid = value.length > 0 && emailPattern.test(value) && control.checkValidity();
+        control.setCustomValidity(isEmailValid ? "" : "Please enter a valid email address.");
+        return isEmailValid;
+      }
+      const isFieldValid = value.length > 0 && control.checkValidity();
+      control.setCustomValidity(isFieldValid ? "" : "This field is required.");
+      return isFieldValid;
+    };
+
+    const syncControlState = (control: HTMLInputElement | HTMLTextAreaElement) => {
+      const isValid = validateControl(control);
+      control.classList.toggle("user-invalid-fallback", !isValid);
+      if (!isValid) {
+        control.setAttribute("aria-invalid", "true");
+      } else {
+        control.removeAttribute("aria-invalid");
+      }
+      return isValid;
+    };
+
+    const fields = Array.from(
+      form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(".contact-input")
+    );
+
+    fields.forEach((field) => {
+      field.addEventListener("blur", () => {
+        if (field.value.length > 0 || field.hasAttribute("aria-invalid")) {
+          syncControlState(field);
+        }
+      });
+
+      field.addEventListener("input", () => {
+        if (field.hasAttribute("aria-invalid") || field.classList.contains("user-invalid-fallback")) {
+          syncControlState(field);
+        } else {
+          field.setCustomValidity("");
+        }
+      });
+    });
+
+    const showStatus = (type: "sending" | "success" | "error", message: string) => {
+      statusEl.className = "rounded-xl px-4 py-3 text-xs md:text-sm border";
+      if (type === "sending") {
+        statusEl.classList.add(
+          "bg-[var(--sec)]/10",
+          "border-[var(--sec)]/30",
+          "text-[var(--white)]"
+        );
+      } else if (type === "success") {
+        statusEl.classList.add(
+          "bg-emerald-500/10",
+          "border-emerald-500/30",
+          "text-emerald-300"
+        );
+      } else {
+        statusEl.classList.add(
+          "bg-red-500/10",
+          "border-red-500/30",
+          "text-red-300"
+        );
+      }
+      statusEl.textContent = message;
+    };
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (isSubmitting) {
+        return;
+      }
+
+      let firstInvalidField: HTMLInputElement | HTMLTextAreaElement | null = null;
+      for (const field of fields) {
+        const valid = syncControlState(field);
+        if (!valid && !firstInvalidField) {
+          firstInvalidField = field;
+        }
+      }
+
+      if (firstInvalidField) {
+        showStatus("error", "Please complete all required fields with a valid email address.");
+        firstInvalidField.focus();
+        return;
+      }
+
+      isSubmitting = true;
+      submitBtn.disabled = true;
+      submitBtn.setAttribute("aria-busy", "true");
+      submitText.textContent = "Sending...";
+      showStatus("sending", "Sending your inquiry...");
+
+      try {
+        const formData = new FormData(form);
+        const encodedParams = new URLSearchParams();
+        formData.forEach((value, key) => {
+          encodedParams.append(key, String(value));
+        });
+
+        const response = await fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: encodedParams.toString(),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Submission failed with status ${response.status}`);
+        }
+
+        form.reset();
+        fields.forEach((field) => {
+          field.classList.remove("user-invalid-fallback");
+          field.removeAttribute("aria-invalid");
+          field.setCustomValidity("");
+        });
+        showStatus(
+          "success",
+          "Thank you! Your inquiry has been sent. I will get back to you shortly."
+        );
+      } catch (_error) {
+        showStatus(
+          "error",
+          "Unable to send your inquiry right now. Please try again, or email emmanuelumaru945@gmail.com directly."
+        );
+      } finally {
+        isSubmitting = false;
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute("aria-busy");
+        submitText.textContent = "Send Inquiry";
+      }
+    });
+  }
+</script>
+
